@@ -25,6 +25,8 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "migration:generate": "tsc && typeorm migration:generate ./src/infrastructure/persistance/migrations/Accounts -d ./dist/infrastructure/persistance/db.js",
+    "migration:run": "tsc && typeorm migration:run -d ./dist/infrastructure/persistance/db.js"
   }
 }

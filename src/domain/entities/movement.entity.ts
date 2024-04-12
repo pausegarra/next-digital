@@ -1,6 +1,6 @@
 import { Account } from './account.entity';
 
-enum MovementTypes {
+export enum MovementTypes {
   INCOME = 'income',
   OUTCOME = 'outcome',
   COMISSION = 'comission',
