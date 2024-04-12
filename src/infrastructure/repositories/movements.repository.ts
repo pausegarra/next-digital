@@ -14,10 +14,9 @@ export class MovementsTypeOrmRepository implements MovementsRepository {
   }
 
   async findByAccount(accountId: string): Promise<MovementModel[]> {
-    return this.movementRepository.find({
-      where: {
-        uuid: accountId
-      }
-    });
+    return this.movementRepository.createQueryBuilder("movement")
+      .leftJoinAndSelect("movement.account", "account")
+      .where("account.uuid = :accountId", { accountId })
+      .getMany();
   }
 }

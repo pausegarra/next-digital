@@ -10,7 +10,7 @@ export class ListMovementsController {
 
   async exec(req: Request, res: Response) {
     try {
-      const results = await this.listMovementsService.execute(req.params.accountId as string);
+      const results = await this.listMovementsService.execute(req.params.id as string);
 
       res.json(new ListMovementsResponse(results));
     } catch (err: any) {

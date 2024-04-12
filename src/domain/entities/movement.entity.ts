@@ -1,15 +1,15 @@
 import { Account } from './account.entity';
 
 export enum MovementTypes {
-  INCOME = 'income',
-  OUTCOME = 'outcome',
-  COMISSION = 'comission',
-  WITHDRAWAL = 'withdrawal'
+  INCOME = 'INCOME',
+  OUTCOME = 'OUTCOME',
+  COMISSION = 'COMISSION',
+  WITHDRAWAL = 'WITHDRAWAL'
 }
 
 export class Movement {
   uuid!: string;
-  account!: Account;
+  account!: Account | string;
   movementType!: MovementTypes;
   ammount!: number;
   createdAt!: Date;
