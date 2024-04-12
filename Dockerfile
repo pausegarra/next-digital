@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 
 RUN yarn
-# RUN yarn test
+RUN yarn test
 RUN yarn build
 
 FROM node:18-alpine3.19 as server
